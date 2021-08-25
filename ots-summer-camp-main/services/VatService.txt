@@ -1,0 +1,12 @@
+public interface VatService {
+
+    public List<Vat> findAll();
+
+    public Vat findById(long theId);
+
+    public void save(Vat vat);
+
+    public void deleteById(long theId);
+}
+
+
