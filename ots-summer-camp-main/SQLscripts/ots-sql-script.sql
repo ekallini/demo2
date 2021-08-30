@@ -106,9 +106,11 @@ CREATE TABLE `invoice_detail` (
 	`total_price` double(10,2) NOT NULL,
 	`invoice_id` bigint(20) unsigned NOT NULL,
 	`product_id` bigint(20) unsigned NOT NULL,
+	`supplier_product_id` bigint(20) unsigned NOT NULL,
 	`vat_id` bigint(20) unsigned NOT NULL,
 	PRIMARY KEY(`id`),
 	CONSTRAINT `fk_invoice_id` FOREIGN KEY(`invoice_id`) REFERENCES `invoice`(`id`),
 	CONSTRAINT `fk_product_id` FOREIGN KEY(`product_id`) REFERENCES `product_service`(`id`),
+	CONSTRAINT `fk_supplier_product_id` FOREIGN KEY(`supplier_product_id`) REFERENCES `supplier_product_service`(`id`),
 	CONSTRAINT `fk_invoice_vat_id` FOREIGN KEY(`vat_id`) REFERENCES `vat`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
